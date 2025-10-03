@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree Krishna Steels - Leading Steel Suppliers in Gujarat</title>
-
-    <!-- ==========  EXISTING BASE STYLES  ========== -->
     <style>
         :root {
             --primary-color: #1e3a8a;
@@ -16,93 +12,135 @@
             --bg-light: #f9fafb;
             --border-color: #e5e7eb;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
+            background: var(--bg-light);
             overflow-x: hidden;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
-        /* --- top bar & header --- */
         .top-bar {
             background: var(--primary-color);
             color: white;
             padding: 10px 0;
             font-size: 14px;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* HEADER ENHANCEMENT */
         header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background .35s, box-shadow .35s;
+            transition: box-shadow 0.3s;
         }
-        header.glass {
-            background: rgba(255, 255, 255, .82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+        header.scrolled {
+            box-shadow: 0 4px 24px rgba(30,58,138,0.14);
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        .logo {
+
+        /* SKS Symbol */
+        .logo-wrapper {
             display: flex;
             align-items: center;
+            gap: 12px;
+        }
+        .sks-symbol {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(30,58,138,0.15);
+            border: 2px solid #f9fafb;
+            letter-spacing: 2px;
+            transition: transform 0.15s;
+            animation: bounceIn 1s;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            60% { transform: scale(1.17); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .logo {
             font-size: 28px;
             font-weight: bold;
             color: var(--primary-color);
             text-decoration: none;
+            letter-spacing: 1px;
         }
+
         .nav-links {
             display: flex;
-            gap: 40px;
             list-style: none;
+            gap: 40px;
         }
+
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            transition: color 0.21s;
             position: relative;
-            transition: color .3s;
         }
-        .nav-links a::after {
+        .nav-links a:after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -5px; left: 0;
+            width: 0; height: 2.5px;
             background: var(--accent-color);
-            transition: width .3s;
+            border-radius: 2px;
+            transition: width 0.27s;
         }
-        .nav-links a:hover::after {
+        .nav-links a:hover:after {
             width: 100%;
         }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
 
-        /* --- hero --- */
+        /* HERO */
         .hero {
-            background: linear-gradient(135deg, rgba(30, 58, 138, .85), rgba(220, 38, 38, .85)),
-                        url('data:image/jpeg;base64,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');
+            background: linear-gradient(135deg, rgba(30,58,138,0.87),rgba(220,38,38,0.85)),
+              url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFB...'); /* TRUNCATED FOR BREVITY */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -113,78 +151,543 @@
             animation: heroFade 1s ease-out;
         }
         @keyframes heroFade {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
         }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, .3); }
-        .hero p { font-size: 20px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-buttons { display: flex; gap: 20px; justify-content: center; }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 18px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.29);
+            animation: fadeIn 1s 0.15s backwards;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 23px;
+            max-width: 620px;
+            margin-inline: auto;
+            animation: fadeIn 1s 0.25s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 14px;
+            animation: fadeIn 1s 0.35s backwards;
+        }
         .btn {
-            padding: 12px 30px;
+            padding: 12px 32px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
+            font-size: 17px;
             display: inline-block;
-            transition: all .3s;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 13px rgba(31,41,55,0.09);
+            transition: all 0.24s;
         }
         .btn-primary {
             background: var(--accent-color);
             color: white;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, .35);
+            letter-spacing: 0.2px;
         }
         .btn-primary:hover {
             background: #d97706;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, .4);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(245,158,11,.27);
         }
         .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        .btn-secondary:hover {
             background: white;
             color: var(--primary-color);
+            border: 2px solid #fff3;
         }
-        /* glow effect */
-        .btn-glow::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0) 60%);
-            transform: scale(0);
-            transition: transform .6s ease;
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px) scale(1.03);
         }
-        .btn-glow:hover::after { transform: scale(1); }
 
-        /* --- sections --- */
+        /* FADE-IN ANIMATION FOR SECTIONS */
+        section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.56s, transform 0.56s;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SECTION TITLES */
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 35px;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             position: relative;
+            display: inline-block;
+            width: 100%;
+            letter-spacing: 0.4px;
         }
-        .section-title::after {
+        .section-title:after {
             content: '';
             position: absolute;
-            bottom: -10px; left: 50%;
-            transform: translateX(-50%);
-            width: 80px; height: 3px;
+            bottom: -12px;
+            left: 50%; transform: translateX(-50%);
+            width: 75px; height: 3px;
             background: var(--accent-color);
+            border-radius: 2px;
         }
-        .about, .products, .services, .contact {
-            padding: 80px 0;
-        }
-        .about, .services { background: var(--bg-light); }
-        .products, .contact { background: white; }
 
-        /* reveal on scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-           
+        /* About + Features */
+        .about { padding: 80px 0; background: var(--bg-light);}
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: center;
+        }
+        .about-text { padding: 20px;}
+        .about-text h3 { color: var(--secondary-color); font-size: 23px; margin-bottom: 18px;}
+        .about-text p { color: var(--text-light); margin-bottom: 13px; line-height: 1.76; }
+        .about-features {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 18px; margin-top: 26px;
+        }
+        .feature-box {
+            background: white; padding: 19px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            transition: transform .27s;
+        }
+        .feature-box:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 6px 19px rgba(0,0,0,0.13); }
+        .feature-box h4 { color: var(--primary-color); margin-bottom: 8px; }
+
+        /* PRODUCTS */
+        .products { padding: 80px 0; background: white;}
+        .products-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 30px; margin-top: 46px;
+        }
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 10px; overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.09);
+            transition: all .27s;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-11px) scale(1.02);
+            box-shadow: 0 10px 32px rgba(30,58,138,0.11);
+        }
+        .product-image {
+            height: 200px;
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 48px; color: white;
+        }
+        .product-info { padding: 20px;}
+        .product-info h3 { color: var(--primary-color); margin-bottom: 10px;}
+        .product-info p { color: var(--text-light); font-size: 14px; margin-bottom: 5px;}
+        .sizes {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        /* SERVICES */
+        .services { padding: 80px 0; background: var(--bg-light);}
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 33px; margin-top: 47px;
+        }
+        .service-card {
+            background: white; padding: 40px 30px;
+            border-radius: 10px; text-align: center;
+            transition: all 0.21s;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+        }
+        .service-card:hover { transform: translateY(-9px) scale(1.012); box-shadow: 0 10px 24px rgba(220,38,38,0.08);}
+        .service-icon { font-size: 43px; color: var(--accent-color); margin-bottom: 16px;}
+        .service-card h3 { color: var(--primary-color); margin-bottom: 12px;}
+        .service-card p { color: var(--text-light); line-height: 1.59;}
+
+        /* CONTACT SECTION */
+        .contact { padding: 80px 0; background: white;}
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 48px;
+        }
+        .contact-info-section {
+            padding: 32px 28px 28px 28px;
+            background: var(--bg-light);
+            border-radius: 11px;
+            box-shadow: 0 2px 13px rgba(30,58,138,0.062);
+        }
+        .contact-item {
+            display: flex; align-items: center; gap: 15px;
+            margin-bottom: 22px;
+            padding: 13px;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.23s;
+        }
+        .contact-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 3px 13px rgba(250, 158, 11, 0.07);
+        }
+        .contact-icon { font-size: 23px; color: var(--accent-color); width: 38px;}
+
+        .map-wrapper {
+            border-radius: 9px; overflow: hidden;
+            box-shadow: 0 2px 13px rgba(30, 58, 138, .1);
+            background: #fff;
+            padding-bottom: 8px;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 32px; right: 32px;
+            background: var(--accent-color);
+            color: white;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 23px;
+            opacity: 0; visibility: hidden;
+            transition: all .3s; z-index: 1021;
+            box-shadow: 0 2px 11px rgba(30,58,138,0.08);
+        }
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1.08);
+        }
+        .scroll-top:hover {
+            background: var(--secondary-color);
+            transform: scale(1.19);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px){
+            .about-content, .contact-container{
+                grid-template-columns: 1fr;
+                gap: 31px;
+            }
+        }
+        @media (max-width: 768px){
+            .nav-links { display: none;}
+            .logo { font-size: 23px;}
+            .hero h1 { font-size: 31px;}
+            .products-grid, .services-grid { grid-template-columns: 1fr;}
+            section { padding-left: 9px; padding-right:9px;}
+            .container { padding:0 8px;}
+        }
+        @media (max-width: 440px){
+            .hero h1 { font-size: 20px;}
+            .section-title { font-size: 19px;}
+            .cta-buttons { flex-direction:column; gap:9px;}
+            .about-content, .contact-container, .products-grid, .services-grid { gap:14px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 rmvkrishna@gmail.com</span>
+                    <span>📱 +91 9825227888</span>
+                </div>
+                <div class="social-links">
+                    <span>Mon - Sat: 9:00 AM - 7:00 PM | Wed & Sun: Half Day</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER with SKS symbol -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo-wrapper">
+                    <span class="sks-symbol">SKS</span>
+                    <a href="#home" class="logo">Shree Krishna Steels</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Shree Krishna Steels</h1>
+            <p>Your Trusted Partner for Premium Quality Steel Products</p>
+            <p>Leading Steel Suppliers & Stockists in Gujarat Since 2006</p>
+            <div class="cta-buttons">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-secondary">Get Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excellence in Steel Trading Since 2006</h3>
+                    <p>Since 2006, Shree Krishna Steels has been at the forefront of Rajkot's steel trading industry, building its reputation on reliability, scale, and service. From our base in Rajkot, we manage a robust distribution network that spans the entire state of Gujarat, ensuring industries and businesses receive consistent access to quality steel.</p>
+                    <p>What sets us apart is not only the breadth of our product range but also our focus on operational transparency and long-term partnerships. We align competitive pricing with uncompromising standards, enabling our clients to plan with confidence and grow with us.</p>
+                    <p>Over the years, we have evolved from a regional supplier into a strategic partner, helping organizations across Gujarat meet their infrastructure, manufacturing, and development needs with dependable steel solutions.</p>
+                    <p>Our commitment to excellence and customer satisfaction has made us the preferred choice for steel products in the region, serving diverse sectors with consistency and professionalism.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-box">
+                        <h4>✓ Quality Products</h4>
+                        <p>Premium grade steel from trusted manufacturers</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>✓ Competitive Pricing</h4>
+                        <p>Best prices with transparent dealings</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>✓ Wide Network</h4>
+                        <p>Serving across Gujarat region</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>✓ Expert Team</h4>
+                        <p>30+ years of industry experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">📊</div>
+                    <div class="product-info">
+                        <h3>MS Flats</h3>
+                        <p>High quality mild steel flats</p>
+                        <p class="sizes">Sizes: 18x4MM TO 200X50MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">⬜</div>
+                    <div class="product-info">
+                        <h3>MS Square Bars</h3>
+                        <p>Premium square steel bars</p>
+                        <p class="sizes">Sizes: 8MM TO 150MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">⭕</div>
+                    <div class="product-info">
+                        <h3>MS Round Bars</h3>
+                        <p>Quality round steel bars</p>
+                        <p class="sizes">Sizes: 8MM TO 150MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🔧</div>
+                    <div class="product-info">
+                        <h3>MS Channels</h3>
+                        <p>Structural steel channels</p>
+                        <p class="sizes">Sizes: 75X40MM TO 250X80MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🏗️</div>
+                    <div class="product-info">
+                        <h3>MS Beams</h3>
+                        <p>Heavy duty steel beams</p>
+                        <p class="sizes">Sizes: 100x50MM TO 300X140MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📐</div>
+                    <div class="product-info">
+                        <h3>MS Angles</h3>
+                        <p>Structural steel angles</p>
+                        <p class="sizes">Sizes: 20X20X3MM TO 100X100X10MM</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🚪</div>
+                    <div class="product-info">
+                        <h3>Gate Channels</h3>
+                        <p>Special channels for gates</p>
+                        <p class="sizes">Sizes: F7D, F4B, EZ7, T1, T2, T6</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📋</div>
+                    <div class="product-info">
+                        <h3>MS Plates</h3>
+                        <p>Heavy duty steel plates</p>
+                        <p class="sizes">Various thickness available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable delivery service across Gujarat. We ensure your orders reach you on time, every time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Quality Assurance</h3>
+                    <p>All our products undergo strict quality checks. We guarantee premium grade steel that meets industry standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Bulk Orders</h3>
+                    <p>Special pricing and services for bulk orders. We cater to large-scale industrial requirements efficiently.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Custom Cutting</h3>
+                    <p>Precision cutting services as per your specifications. Get exactly what you need for your projects.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support to address all your queries and provide technical assistance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Industrial Supply</h3>
+                    <p>Complete steel solutions for industries, construction projects, and infrastructure development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3 style="color: var(--primary-color); margin-bottom: 30px;">Get In Touch</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Address:</strong><br>
+                            Lohanagar Main Road, Gondal Road,<br>
+                            Opp. Ahiya Apartment, Near Bhaktinagar Telephone Exchange<br>
+                            Rajkot - 360002
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            +91 9825227888 (Rupeshkumar Vachhani)<br>
+                            +91 9825727888 (Office)
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email:</strong><br>
+                            rmvkrishna@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <div>
+                            <strong>Working Hours:</strong><br>
+                            Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                            Wednesday: Half Day | Sunday: Half Day
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.654348479022!2d70.79840631495543!3d22.281188295017607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzUyLjMiTiA3MMKwNDgnMDIuMSJF!5e0!3m2!1sen!2sin!4v1633429812345"
+                        width="100%"
+                        height="500"
+                        style="border:0; border-radius:8px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <p style="margin-top:8px; font-size:14px; color:var(--text-light);">
+                        Shree Krishna Steels, Lohanagar Main Rd, Lohanagar, Bhakti Nagar, Rajkot, Gujarat 360002
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTopBtn" title="Back to Top">↑</div>
+
+    <script>
+        // Scroll To Top Button
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', function(){
+            if(window.scrollY > 420) {
+                scrollBtn.classList.add('show');
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                scrollBtn.classList.remove('show');
+                document.getElementById('header').classList.remove('scrolled');
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        };
+
+
+        // Section fade-in on scroll
+        function revealSections() {
+            document.querySelectorAll('section').forEach(sec=>{
+                const secTop = sec.getBoundingClientRect().top;
+                if(secTop < window.innerHeight - 80) sec.classList.add('visible');
+            });
+        }
+        window.addEventListener('DOMContentLoaded', revealSections);
+        window.addEventListener('scroll', revealSections);
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+            anchor.addEventListener('click', function(e){
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    e.preventDefault();
+                    window.scrollTo({top: target.offsetTop-68, behavior:"smooth"});
+                }
+            });
+        });
+    </script>
+</body>
      
