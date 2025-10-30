@@ -236,11 +236,15 @@
 
         /* FADE-IN ANIMATION FOR SECTIONS */
         section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section.fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.56s, transform 0.56s;
         }
-        section.visible {
+        section.fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -716,7 +720,4 @@
         window.addEventListener('scroll', function(){
             if(window.scrollY > 420) {
                 scrollBtn.classList.add('show');
-                document.getElementById('header').classList.add('scrolled');
-            } else {
-                scrollBtn.classList.remove('show');
                 document.
