@@ -15,12 +15,24 @@
             --border-color: #e5e7eb;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--bg-light);
             overflow-x: hidden;
+            width: 100%;
         }
 
         .top-bar {
@@ -40,17 +52,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .contact-info {
             display: flex;
             gap: 30px;
+            flex-wrap: wrap;
         }
 
         .contact-info span {
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .social-links {
+            white-space: nowrap;
         }
 
         /* HEADER ENHANCEMENT */
@@ -142,7 +161,7 @@
         /* HERO */
         .hero {
             background: linear-gradient(135deg, rgba(30,58,138,0.87),rgba(220,38,38,0.85)),
-              url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFB...'); /* TRUNCATED FOR BREVITY */
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3a8a" width="1200" height="600"/></svg>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -169,6 +188,11 @@
             max-width: 620px;
             margin-inline: auto;
             animation: fadeIn 1s 0.25s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .cta-buttons {
@@ -381,20 +405,53 @@
                 grid-template-columns: 1fr;
                 gap: 31px;
             }
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
         }
         @media (max-width: 768px){
             .nav-links { display: none;}
-            .logo { font-size: 23px;}
-            .hero h1 { font-size: 31px;}
+            .logo { font-size: 20px;}
+            .logo-wrapper { gap: 8px;}
+            .sks-symbol { width: 38px; height: 38px; font-size: 1rem;}
+            .hero { padding: 80px 0;}
+            .hero h1 { font-size: 32px; padding: 0 15px;}
+            .hero p { font-size: 18px; padding: 0 15px;}
             .products-grid, .services-grid { grid-template-columns: 1fr;}
-            section { padding-left: 9px; padding-right:9px;}
-            .container { padding:0 8px;}
+            .about-features { grid-template-columns: 1fr;}
+            .about, .products, .services, .contact { padding: 50px 0;}
+            .section-title { font-size: 28px;}
+            .top-bar { font-size: 12px; padding: 8px 0;}
+            .contact-info span { font-size: 12px;}
         }
-        @media (max-width: 440px){
+        @media (max-width: 480px){
+            .hero h1 { font-size: 24px;}
+            .hero p { font-size: 16px;}
+            .section-title { font-size: 24px;}
+            .cta-buttons { flex-direction: column; gap: 12px; padding: 0 20px;}
+            .btn { padding: 10px 24px; font-size: 15px; width: 100%; max-width: 280px;}
+            .about-content, .contact-container, .products-grid, .services-grid { gap: 20px; }
+            .logo { font-size: 18px;}
+            .container { padding: 0 15px;}
+            nav { padding: 15px 0;}
+            .service-card, .feature-box { padding: 20px 15px;}
+            .product-info { padding: 15px;}
+            .contact-info-section { padding: 20px 15px;}
+            .map-wrapper iframe { height: 300px;}
+        }
+        @media (max-width: 380px){
             .hero h1 { font-size: 20px;}
-            .section-title { font-size: 19px;}
-            .cta-buttons { flex-direction:column; gap:9px;}
-            .about-content, .contact-container, .products-grid, .services-grid { gap:14px; }
+            .hero p { font-size: 14px;}
+            .section-title { font-size: 20px;}
+            .logo { font-size: 16px;}
+            .sks-symbol { width: 32px; height: 32px; font-size: 0.9rem;}
         }
     </style>
 </head>
@@ -634,7 +691,7 @@
                 </div>
                 <div class="map-wrapper">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d3691.654348479022!2d70.79840631495543!3d22.281188295017607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzUyLjMiTiA3MMKwNDgnMDIuMSJF!5e0!3m2!1sen!2sin!4v1633429812345"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.654348479022!2d70.79840631495543!3d22.281188295017607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzUyLjMiTiA3MMKwNDgnMDIuMSJF!5e0!3m2!1sen!2sin!4v1633429812345"
                         width="100%"
                         height="500"
                         style="border:0; border-radius:8px;"
@@ -662,33 +719,4 @@
                 document.getElementById('header').classList.add('scrolled');
             } else {
                 scrollBtn.classList.remove('show');
-                document.getElementById('header').classList.remove('scrolled');
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({top: 0, behavior: "smooth"});
-        };
-
-
-        // Section fade-in on scroll
-        function revealSections() {
-            document.querySelectorAll('section').forEach(sec=>{
-                const secTop = sec.getBoundingClientRect().top;
-                if(secTop < window.innerHeight - 80) sec.classList.add('visible');
-            });
-        }
-        window.addEventListener('DOMContentLoaded', revealSections);
-        window.addEventListener('scroll', revealSections);
-
-        // Smooth scrolling for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-            anchor.addEventListener('click', function(e){
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target){
-                    e.preventDefault();
-                    window.scrollTo({top: target.offsetTop-68, behavior:"smooth"});
-                }
-            });
-        });
-    </script>
-</body>
+                document.
