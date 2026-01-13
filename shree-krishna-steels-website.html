@@ -1,723 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Krishna Steels - Leading Steel Suppliers in Gujarat</title>
-    <style>
-        :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #dc2626;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --border-color: #e5e7eb;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Krishna Steels - Leading Steel Suppliers in Gujarat</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #dc2626;
+      --accent-color: #f59e0b;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --bg-light: #f9fafb;
+      --border-color: #e5e7eb;
+    }
 
-        html {
-            overflow-x: hidden;
-            width: 100%;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-light);
-            overflow-x: hidden;
-            width: 100%;
-        }
+    html { overflow-x: hidden; width: 100%; }
 
-        .top-bar {
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 0;
-            font-size: 14px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      overflow-x: hidden;
+      width: 100%;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .top-bar {
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 0;
+      font-size: 14px;
+    }
 
-        .top-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .contact-info {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+    .top-bar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-        .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .contact-info {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-        .social-links {
-            white-space: nowrap;
-        }
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        /* HEADER ENHANCEMENT */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: box-shadow 0.3s;
-        }
-        header.scrolled {
-            box-shadow: 0 4px 24px rgba(30,58,138,0.14);
-        }
+    .social-links { white-space: nowrap; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+    /* HEADER */
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 4px 24px rgba(30,58,138,0.14); }
 
-        /* SKS Symbol */
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .sks-symbol {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 2px 8px rgba(30,58,138,0.15);
-            border: 2px solid #f9fafb;
-            letter-spacing: 2px;
-            transition: transform 0.15s;
-            animation: bounceIn 1s;
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0.9); opacity: 0; }
-            60% { transform: scale(1.17); opacity: 1; }
-            100% { transform: scale(1); }
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
+    .sks-symbol {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(30,58,138,0.15);
+      border: 2px solid #f9fafb;
+      letter-spacing: 2px;
+      transition: transform 0.15s;
+      animation: bounceIn 1s;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.21s;
-            position: relative;
-        }
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px; left: 0;
-            width: 0; height: 2.5px;
-            background: var(--accent-color);
-            border-radius: 2px;
-            transition: width 0.27s;
-        }
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
-        }
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.17); opacity: 1; }
+      100% { transform: scale(1); }
+    }
 
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, rgba(30,58,138,0.87),rgba(220,38,38,0.85)),
-              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3a8a" width="1200" height="600"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 120px 0;
-            color: white;
-            text-align: center;
-            position: relative;
-            animation: heroFade 1s ease-out;
-        }
-        @keyframes heroFade {
-            from { opacity: 0; transform: translateY(30px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 18px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.29);
-            animation: fadeIn 1s 0.15s backwards;
-        }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
 
-        .hero p {
-            font-size: 21px;
-            margin-bottom: 23px;
-            max-width: 620px;
-            margin-inline: auto;
-            animation: fadeIn 1s 0.25s backwards;
-        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.21s;
+      position: relative;
+    }
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 14px;
-            animation: fadeIn 1s 0.35s backwards;
-        }
-        .btn {
-            padding: 12px 32px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 17px;
-            display: inline-block;
-            box-shadow: 0 4px 13px rgba(31,41,55,0.09);
-            transition: all 0.24s;
-        }
-        .btn-primary {
-            background: var(--accent-color);
-            color: white;
-            letter-spacing: 0.2px;
-        }
-        .btn-primary:hover {
-            background: #d97706;
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 6px 24px rgba(245,158,11,.27);
-        }
-        .btn-secondary {
-            background: white;
-            color: var(--primary-color);
-            border: 2px solid #fff3;
-        }
-        .btn-secondary:hover {
-            background: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
-            transform: translateY(-2px) scale(1.03);
-        }
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: var(--accent-color);
+      border-radius: 2px;
+      transition: width 0.27s;
+    }
 
-        /* FADE-IN ANIMATION FOR SECTIONS */
-        section {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        section.fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.56s, transform 0.56s;
-        }
-        section.fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .nav-links a:hover:after { width: 100%; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
 
-        /* SECTION TITLES */
-        .section-title {
-            text-align: center;
-            font-size: 35px;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            letter-spacing: 0.4px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%; transform: translateX(-50%);
-            width: 75px; height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, rgba(30,58,138,0.87), rgba(220,38,38,0.85)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3a8a" width="1200" height="600"/></svg>');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 120px 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: heroFade 1s ease-out;
+    }
 
-        /* About + Features */
-        .about { padding: 80px 0; background: var(--bg-light);}
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-            align-items: center;
-        }
-        .about-text { padding: 20px;}
-        .about-text h3 { color: var(--secondary-color); font-size: 23px; margin-bottom: 18px;}
-        .about-text p { color: var(--text-light); margin-bottom: 13px; line-height: 1.76; }
-        .about-features {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 18px; margin-top: 26px;
-        }
-        .feature-box {
-            background: white; padding: 19px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            transition: transform .27s;
-        }
-        .feature-box:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 6px 19px rgba(0,0,0,0.13); }
-        .feature-box h4 { color: var(--primary-color); margin-bottom: 8px; }
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        /* PRODUCTS */
-        .products { padding: 80px 0; background: white;}
-        .products-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 30px; margin-top: 46px;
-        }
-        .product-card {
-            background: var(--bg-light);
-            border-radius: 10px; overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.09);
-            transition: all .27s;
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-11px) scale(1.02);
-            box-shadow: 0 10px 32px rgba(30,58,138,0.11);
-        }
-        .product-image {
-            height: 200px;
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 48px; color: white;
-        }
-        .product-info { padding: 20px;}
-        .product-info h3 { color: var(--primary-color); margin-bottom: 10px;}
-        .product-info p { color: var(--text-light); font-size: 14px; margin-bottom: 5px;}
-        .sizes {
-            color: var(--secondary-color);
-            font-weight: 600;
-            margin-top: 10px;
-            font-size: 15px;
-        }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.29);
+      animation: fadeIn 1s 0.15s backwards;
+    }
 
-        /* SERVICES */
-        .services { padding: 80px 0; background: var(--bg-light);}
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 33px; margin-top: 47px;
-        }
-        .service-card {
-            background: white; padding: 40px 30px;
-            border-radius: 10px; text-align: center;
-            transition: all 0.21s;
-            box-shadow: 0 3px 14px rgba(0,0,0,0.07);
-        }
-        .service-card:hover { transform: translateY(-9px) scale(1.012); box-shadow: 0 10px 24px rgba(220,38,38,0.08);}
-        .service-icon { font-size: 43px; color: var(--accent-color); margin-bottom: 16px;}
-        .service-card h3 { color: var(--primary-color); margin-bottom: 12px;}
-        .service-card p { color: var(--text-light); line-height: 1.59;}
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 23px;
+      max-width: 620px;
+      margin-inline: auto;
+      animation: fadeIn 1s 0.25s backwards;
+    }
 
-        /* CONTACT SECTION */
-        .contact { padding: 80px 0; background: white;}
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 48px;
-        }
-        .contact-info-section {
-            padding: 32px 28px 28px 28px;
-            background: var(--bg-light);
-            border-radius: 11px;
-            box-shadow: 0 2px 13px rgba(30,58,138,0.062);
-        }
-        .contact-item {
-            display: flex; align-items: center; gap: 15px;
-            margin-bottom: 22px;
-            padding: 13px;
-            background: white;
-            border-radius: 8px;
-            transition: all 0.23s;
-        }
-        .contact-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 3px 13px rgba(250, 158, 11, 0.07);
-        }
-        .contact-icon { font-size: 23px; color: var(--accent-color); width: 38px;}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .map-wrapper {
-            border-radius: 9px; overflow: hidden;
-            box-shadow: 0 2px 13px rgba(30, 58, 138, .1);
-            background: #fff;
-            padding-bottom: 8px;
-        }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 14px;
+      animation: fadeIn 1s 0.35s backwards;
+    }
 
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 32px; right: 32px;
-            background: var(--accent-color);
-            color: white;
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 23px;
-            opacity: 0; visibility: hidden;
-            transition: all .3s; z-index: 1021;
-            box-shadow: 0 2px 11px rgba(30,58,138,0.08);
-        }
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1.08);
-        }
-        .scroll-top:hover {
-            background: var(--secondary-color);
-            transform: scale(1.19);
-        }
+    .btn {
+      padding: 12px 32px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 17px;
+      display: inline-block;
+      box-shadow: 0 4px 13px rgba(31,41,55,0.09);
+      transition: all 0.24s;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 900px){
-            .about-content, .contact-container{
-                grid-template-columns: 1fr;
-                gap: 31px;
-            }
-            .top-bar-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 8px;
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 8px;
-                align-items: center;
-            }
-        }
-        @media (max-width: 768px){
-            .nav-links { display: none;}
-            .logo { font-size: 20px;}
-            .logo-wrapper { gap: 8px;}
-            .sks-symbol { width: 38px; height: 38px; font-size: 1rem;}
-            .hero { padding: 80px 0;}
-            .hero h1 { font-size: 32px; padding: 0 15px;}
-            .hero p { font-size: 18px; padding: 0 15px;}
-            .products-grid, .services-grid { grid-template-columns: 1fr;}
-            .about-features { grid-template-columns: 1fr;}
-            .about, .products, .services, .contact { padding: 50px 0;}
-            .section-title { font-size: 28px;}
-            .top-bar { font-size: 12px; padding: 8px 0;}
-            .contact-info span { font-size: 12px;}
-        }
-        @media (max-width: 480px){
-            .hero h1 { font-size: 24px;}
-            .hero p { font-size: 16px;}
-            .section-title { font-size: 24px;}
-            .cta-buttons { flex-direction: column; gap: 12px; padding: 0 20px;}
-            .btn { padding: 10px 24px; font-size: 15px; width: 100%; max-width: 280px;}
-            .about-content, .contact-container, .products-grid, .services-grid { gap: 20px; }
-            .logo { font-size: 18px;}
-            .container { padding: 0 15px;}
-            nav { padding: 15px 0;}
-            .service-card, .feature-box { padding: 20px 15px;}
-            .product-info { padding: 15px;}
-            .contact-info-section { padding: 20px 15px;}
-            .map-wrapper iframe { height: 300px;}
-        }
-        @media (max-width: 380px){
-            .hero h1 { font-size: 20px;}
-            .hero p { font-size: 14px;}
-            .section-title { font-size: 20px;}
-            .logo { font-size: 16px;}
-            .sks-symbol { width: 32px; height: 32px; font-size: 0.9rem;}
-        }
-    </style>
+    .btn-primary {
+      background: var(--accent-color);
+      color: white;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-primary:hover {
+      background: #d97706;
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 6px 24px rgba(245,158,11,.27);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid #fff3;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      letter-spacing: 0.4px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75px;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    /* About */
+    .about { padding: 80px 0; background: var(--bg-light); }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 50px;
+      align-items: center;
+    }
+    .about-text { padding: 20px; }
+    .about-text h3 { color: var(--secondary-color); font-size: 23px; margin-bottom: 18px; }
+    .about-text p { color: var(--text-light); margin-bottom: 13px; line-height: 1.76; }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .feature-box {
+      background: white;
+      padding: 19px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: transform .27s;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 6px 19px rgba(0,0,0,0.13);
+    }
+    .feature-box h4 { color: var(--primary-color); margin-bottom: 8px; }
+
+    /* PRODUCTS */
+    .products { padding: 80px 0; background: white; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 46px;
+    }
+    .product-card {
+      background: var(--bg-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
+      transition: all .27s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-11px) scale(1.02);
+      box-shadow: 0 10px 32px rgba(30,58,138,0.11);
+    }
+
+    /* UPDATED: image holder + img */
+    .product-image {
+      height: 220px;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info { padding: 20px; }
+    .product-info h3 { color: var(--primary-color); margin-bottom: 10px; }
+    .product-info p { color: var(--text-light); font-size: 14px; margin-bottom: 5px; }
+    .sizes {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    /* SERVICES */
+    .services { padding: 80px 0; background: var(--bg-light); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 33px;
+      margin-top: 47px;
+    }
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.21s;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    }
+    .service-card:hover {
+      transform: translateY(-9px) scale(1.012);
+      box-shadow: 0 10px 24px rgba(220,38,38,0.08);
+    }
+    .service-icon { font-size: 43px; color: var(--accent-color); margin-bottom: 16px; }
+    .service-card h3 { color: var(--primary-color); margin-bottom: 12px; }
+    .service-card p { color: var(--text-light); line-height: 1.59; }
+
+    /* CONTACT */
+    .contact { padding: 80px 0; background: white; }
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 48px;
+    }
+    .contact-info-section {
+      padding: 32px 28px 28px 28px;
+      background: var(--bg-light);
+      border-radius: 11px;
+      box-shadow: 0 2px 13px rgba(30,58,138,0.062);
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 22px;
+      padding: 13px;
+      background: white;
+      border-radius: 8px;
+      transition: all 0.23s;
+    }
+    .contact-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 3px 13px rgba(250, 158, 11, 0.07);
+    }
+    .contact-icon { font-size: 23px; color: var(--accent-color); width: 38px; }
+    .map-wrapper {
+      border-radius: 9px;
+      overflow: hidden;
+      box-shadow: 0 2px 13px rgba(30, 58, 138, .1);
+      background: #fff;
+      padding-bottom: 8px;
+    }
+
+    /* Scroll to Top */
+    .scroll-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: var(--accent-color);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 23px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s;
+      z-index: 1021;
+      box-shadow: 0 2px 11px rgba(30,58,138,0.08);
+    }
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.08);
+    }
+    .scroll-top:hover {
+      background: var(--secondary-color);
+      transform: scale(1.19);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-content, .contact-container { grid-template-columns: 1fr; gap: 31px; }
+      .top-bar-content { flex-direction: column; text-align: center; gap: 8px; }
+      .contact-info { flex-direction: column; gap: 8px; align-items: center; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .logo { font-size: 20px; }
+      .logo-wrapper { gap: 8px; }
+      .sks-symbol { width: 38px; height: 38px; font-size: 1rem; }
+      .hero { padding: 80px 0; }
+      .hero h1 { font-size: 32px; padding: 0 15px; }
+      .hero p { font-size: 18px; padding: 0 15px; }
+      .products-grid, .services-grid { grid-template-columns: 1fr; }
+      .about-features { grid-template-columns: 1fr; }
+      .about, .products, .services, .contact { padding: 50px 0; }
+      .section-title { font-size: 28px; }
+      .top-bar { font-size: 12px; padding: 8px 0; }
+      .contact-info span { font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 24px; }
+      .hero p { font-size: 16px; }
+      .section-title { font-size: 24px; }
+      .cta-buttons { flex-direction: column; gap: 12px; padding: 0 20px; }
+      .btn { padding: 10px 24px; font-size: 15px; width: 100%; max-width: 280px; }
+      .about-content, .contact-container, .products-grid, .services-grid { gap: 20px; }
+      .logo { font-size: 18px; }
+      .container { padding: 0 15px; }
+      nav { padding: 15px 0; }
+      .service-card, .feature-box { padding: 20px 15px; }
+      .product-info { padding: 15px; }
+      .contact-info-section { padding: 20px 15px; }
+      .map-wrapper iframe { height: 300px; }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 20px; }
+      .hero p { font-size: 14px; }
+      .section-title { font-size: 20px; }
+      .logo { font-size: 16px; }
+      .sks-symbol { width: 32px; height: 32px; font-size: 0.9rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="contact-info">
-                    <span>📧 rmvkrishna@gmail.com</span>
-                    <span>📱 +91 9825227888</span>
-                </div>
-                <div class="social-links">
-                    <span>Mon - Sat: 9:00 AM - 7:00 PM | Wed & Sun: Half Day</span>
-                </div>
-            </div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="contact-info">
+          <span>📧 rmvkrishna@gmail.com</span>
+          <span>📱 +91 9825227888</span>
         </div>
+        <div class="social-links">
+          <span>Mon - Sat: 9:00 AM - 7:00 PM | Wed & Sun: Half Day</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- HEADER with SKS symbol -->
-    <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo-wrapper">
-                    <span class="sks-symbol">SKS</span>
-                    <a href="#home" class="logo">Shree Krishna Steels</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container">
+      <nav>
+        <div class="logo-wrapper">
+          <span class="sks-symbol">SKS</span>
+          <a href="#home" class="logo">Shree Krishna Steels</a>
         </div>
-    </header>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Welcome to Shree Krishna Steels</h1>
-            <p>Your Trusted Partner for Premium Quality Steel Products</p>
-            <p>Leading Steel Suppliers & Stockists in Gujarat Since 2006</p>
-            <div class="cta-buttons">
-                <a href="#products" class="btn btn-primary">View Products</a>
-                <a href="#contact" class="btn btn-secondary">Get Quote</a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Welcome to Shree Krishna Steels</h1>
+      <p>Your Trusted Partner for Premium Quality Steel Products</p>
+      <p>Leading Steel Suppliers & Stockists in Gujarat Since 2006</p>
+      <div class="cta-buttons">
+        <a href="#products" class="btn btn-primary">View Products</a>
+        <a href="#contact" class="btn btn-secondary">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Excellence in Steel Trading Since 2006</h3>
+          <p>Since 2006, Shree Krishna Steels has been at the forefront of Rajkot's steel trading industry, building its reputation on reliability, scale, and service. From our base in Rajkot, we manage a robust distribution network that spans the entire state of Gujarat, ensuring industries and businesses receive consistent access to quality steel.</p>
+          <p>What sets us apart is not only the breadth of our product range but also our focus on operational transparency and long-term partnerships. We align competitive pricing with uncompromising standards, enabling our clients to plan with confidence and grow with us.</p>
+          <p>Over the years, we have evolved from a regional supplier into a strategic partner, helping organizations across Gujarat meet their infrastructure, manufacturing, and development needs with dependable steel solutions.</p>
+          <p>Our commitment to excellence and customer satisfaction has made us the preferred choice for steel products in the region, serving diverse sectors with consistency and professionalism.</p>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-box">
+            <h4>✓ Quality Products</h4>
+            <p>Premium grade steel from trusted manufacturers</p>
+          </div>
+          <div class="feature-box">
+            <h4>✓ Competitive Pricing</h4>
+            <p>Best prices with transparent dealings</p>
+          </div>
+          <div class="feature-box">
+            <h4>✓ Wide Network</h4>
+            <p>Serving across Gujarat region</p>
+          </div>
+          <div class="feature-box">
+            <h4>✓ Expert Team</h4>
+            <p>30+ years of industry experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products (UPDATED with your photos, in the exact order you requested) -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">Our Products</h2>
+
+      <div class="products-grid">
+        <!-- MS Angle (Photo 1) -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="MS Angle.jpeg" alt="MS Angle Steel" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>MS Angle</h3>
+            <p>Structural steel angles</p>
+            <p class="sizes">Sizes: 20X20X3MM TO 100X100X10MM</p>
+          </div>
+        </div>
+
+        <!-- MS Beam (Photo 2) -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="MS Beam.jpeg" alt="MS Beam Steel" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>MS Beam</h3>
+            <p>Heavy duty steel beams</p>
+            <p class="sizes">Sizes: 100x50MM TO 300X140MM</p>
+          </div>
+        </div>
+
+        <!-- MS Channel (Photo 3) -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="MS Channel.jpeg" alt="MS Channel Steel" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>MS Channel</h3>
+            <p>Structural steel channels</p>
+            <p class="sizes">Sizes: 75X40MM TO 250X80MM</p>
+          </div>
+        </div>
+
+        <!-- MS Flat (Photo 4) -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="MS Flat.jpeg" alt="MS Flat Steel" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>MS Flat</h3>
+            <p>High quality mild steel flats</p>
+            <p class="sizes">Sizes: 18x4MM TO 200X50MM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Quick and reliable delivery service across Gujarat. We ensure your orders reach you on time, every time.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Quality Assurance</h3>
+          <p>All our products undergo strict quality checks. We guarantee premium grade steel that meets industry standards.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3>Bulk Orders</h3>
+          <p>Special pricing and services for bulk orders. We cater to large-scale industrial requirements efficiently.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Custom Cutting</h3>
+          <p>Precision cutting services as per your specifications. Get exactly what you need for your projects.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock customer support to address all your queries and provide technical assistance.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏭</div>
+          <h3>Industrial Supply</h3>
+          <p>Complete steel solutions for industries, construction projects, and infrastructure development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info-section">
+          <h3 style="color: var(--primary-color); margin-bottom: 30px;">Get In Touch</h3>
+
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Address:</strong><br>
+              Lohanagar Main Road, Gondal Road,<br>
+              Opp. Ahiya Apartment, Near Bhaktinagar Telephone Exchange<br>
+              Rajkot - 360002
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Excellence in Steel Trading Since 2006</h3>
-                    <p>Since 2006, Shree Krishna Steels has been at the forefront of Rajkot's steel trading industry, building its reputation on reliability, scale, and service. From our base in Rajkot, we manage a robust distribution network that spans the entire state of Gujarat, ensuring industries and businesses receive consistent access to quality steel.</p>
-                    <p>What sets us apart is not only the breadth of our product range but also our focus on operational transparency and long-term partnerships. We align competitive pricing with uncompromising standards, enabling our clients to plan with confidence and grow with us.</p>
-                    <p>Over the years, we have evolved from a regional supplier into a strategic partner, helping organizations across Gujarat meet their infrastructure, manufacturing, and development needs with dependable steel solutions.</p>
-                    <p>Our commitment to excellence and customer satisfaction has made us the preferred choice for steel products in the region, serving diverse sectors with consistency and professionalism.</p>
-                </div>
-                <div class="about-features">
-                    <div class="feature-box">
-                        <h4>✓ Quality Products</h4>
-                        <p>Premium grade steel from trusted manufacturers</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>✓ Competitive Pricing</h4>
-                        <p>Best prices with transparent dealings</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>✓ Wide Network</h4>
-                        <p>Serving across Gujarat region</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>✓ Expert Team</h4>
-                        <p>30+ years of industry experience</p>
-                    </div>
-                </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Phone:</strong><br>
+              +91 9825227888 (Rupeshkumar Vachhani)<br>
+              +91 9825727888 (Office)
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <h2 class="section-title">Our Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">📊</div>
-                    <div class="product-info">
-                        <h3>MS Flats</h3>
-                        <p>High quality mild steel flats</p>
-                        <p class="sizes">Sizes: 18x4MM TO 200X50MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">⬜</div>
-                    <div class="product-info">
-                        <h3>MS Square Bars</h3>
-                        <p>Premium square steel bars</p>
-                        <p class="sizes">Sizes: 8MM TO 150MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">⭕</div>
-                    <div class="product-info">
-                        <h3>MS Round Bars</h3>
-                        <p>Quality round steel bars</p>
-                        <p class="sizes">Sizes: 8MM TO 150MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🔧</div>
-                    <div class="product-info">
-                        <h3>MS Channels</h3>
-                        <p>Structural steel channels</p>
-                        <p class="sizes">Sizes: 75X40MM TO 250X80MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🏗️</div>
-                    <div class="product-info">
-                        <h3>MS Beams</h3>
-                        <p>Heavy duty steel beams</p>
-                        <p class="sizes">Sizes: 100x50MM TO 300X140MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">📐</div>
-                    <div class="product-info">
-                        <h3>MS Angles</h3>
-                        <p>Structural steel angles</p>
-                        <p class="sizes">Sizes: 20X20X3MM TO 100X100X10MM</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🚪</div>
-                    <div class="product-info">
-                        <h3>Gate Channels</h3>
-                        <p>Special channels for gates</p>
-                        <p class="sizes">Sizes: F7D, F4B, EZ7, T1, T2, T6</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">📋</div>
-                    <div class="product-info">
-                        <h3>MS Plates</h3>
-                        <p>Heavy duty steel plates</p>
-                        <p class="sizes">Various thickness available</p>
-                    </div>
-                </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email:</strong><br>
+              rmvkrishna@gmail.com
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🚚</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick and reliable delivery service across Gujarat. We ensure your orders reach you on time, every time.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Quality Assurance</h3>
-                    <p>All our products undergo strict quality checks. We guarantee premium grade steel that meets industry standards.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Bulk Orders</h3>
-                    <p>Special pricing and services for bulk orders. We cater to large-scale industrial requirements efficiently.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Custom Cutting</h3>
-                    <p>Precision cutting services as per your specifications. Get exactly what you need for your projects.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📞</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support to address all your queries and provide technical assistance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏭</div>
-                    <h3>Industrial Supply</h3>
-                    <p>Complete steel solutions for industries, construction projects, and infrastructure development.</p>
-                </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕒</span>
+            <div>
+              <strong>Working Hours:</strong><br>
+              Monday - Saturday: 9:00 AM - 7:00 PM<br>
+              Wednesday: Half Day | Sunday: Half Day
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info-section">
-                    <h3 style="color: var(--primary-color); margin-bottom: 30px;">Get In Touch</h3>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <strong>Address:</strong><br>
-                            Lohanagar Main Road, Gondal Road,<br>
-                            Opp. Ahiya Apartment, Near Bhaktinagar Telephone Exchange<br>
-                            Rajkot - 360002
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <strong>Phone:</strong><br>
-                            +91 9825227888 (Rupeshkumar Vachhani)<br>
-                            +91 9825727888 (Office)
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <strong>Email:</strong><br>
-                            rmvkrishna@gmail.com
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🕒</span>
-                        <div>
-                            <strong>Working Hours:</strong><br>
-                            Monday - Saturday: 9:00 AM - 7:00 PM<br>
-                            Wednesday: Half Day | Sunday: Half Day
-                        </div>
-                    </div>
-                </div>
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.654348479022!2d70.79840631495543!3d22.281188295017607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzUyLjMiTiA3MMKwNDgnMDIuMSJF!5e0!3m2!1sen!2sin!4v1633429812345"
-                        width="100%"
-                        height="500"
-                        style="border:0; border-radius:8px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <p style="margin-top:8px; font-size:14px; color:var(--text-light);">
-                        Shree Krishna Steels, Lohanagar Main Rd, Lohanagar, Bhakti Nagar, Rajkot, Gujarat 360002
-                    </p>
-                </div>
-            </div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.654348479022!2d70.79840631495543!3d22.281188295017607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzUyLjMiTiA3MMKwNDgnMDIuMSJF!5e0!3m2!1sen!2sin!4v1633429812345"
+            width="100%"
+            height="500"
+            style="border:0; border-radius:8px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <p style="margin-top:8px; font-size:14px; color:var(--text-light);">
+            Shree Krishna Steels, Lohanagar Main Rd, Lohanagar, Bhakti Nagar, Rajkot, Gujarat 360002
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTopBtn" title="Back to Top">↑</div>
+  <!-- Scroll to Top -->
+  <div class="scroll-top" id="scrollTopBtn" title="Back to Top">↑</div>
 
-    <script>
-        // Scroll To Top Button
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', function(){
-            if(window.scrollY > 420) {
-                scrollBtn.classList.add('show');
-                document.
+  <script>
+    // Scroll-to-top + header shadow
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    const header = document.getElementById('header');
+
+    function onScroll() {
+      // Scroll-top button
+      if (window.scrollY > 420) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+
+      // Header shadow
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Optional: smooth scrolling for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
+
