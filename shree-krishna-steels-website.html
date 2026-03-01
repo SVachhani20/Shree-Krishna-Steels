@@ -17,7 +17,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { overflow-x: hidden; width: 100%; }
 
     body {
@@ -102,7 +101,6 @@
       box-shadow: 0 2px 8px rgba(30,58,138,0.15);
       border: 2px solid #f9fafb;
       letter-spacing: 2px;
-      transition: transform 0.15s;
       animation: bounceIn 1s;
     }
 
@@ -159,7 +157,6 @@
       padding: 120px 0;
       color: white;
       text-align: center;
-      position: relative;
       animation: heroFade 1s ease-out;
     }
 
@@ -210,7 +207,6 @@
     .btn-primary {
       background: var(--accent-color);
       color: white;
-      letter-spacing: 0.2px;
     }
 
     .btn-primary:hover {
@@ -291,10 +287,11 @@
     .products { padding: 80px 0; background: white; }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       margin-top: 46px;
     }
+
     .product-card {
       background: var(--bg-light);
       border-radius: 10px;
@@ -303,21 +300,39 @@
       transition: all .27s;
       position: relative;
     }
+
     .product-card:hover {
       transform: translateY(-11px) scale(1.02);
       box-shadow: 0 10px 32px rgba(30,58,138,0.11);
     }
 
-    /* UPDATED: image holder + img */
+    /* Image holder */
     .product-image {
-      height: 220px;
+      height: 230px;
       background: #f3f4f6;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
+
     .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* If a product has 2 photos */
+    .product-image.multi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 2px;
+      background: #f3f4f6;
+    }
+
+    .product-image.multi img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -328,7 +343,7 @@
     .product-info p { color: var(--text-light); font-size: 14px; margin-bottom: 5px; }
     .sizes {
       color: var(--secondary-color);
-      font-weight: 600;
+      font-weight: 700;
       margin-top: 10px;
       font-size: 15px;
     }
@@ -490,7 +505,7 @@
     </div>
   </div>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header id="header">
     <div class="container">
       <nav>
@@ -557,59 +572,89 @@
     </div>
   </section>
 
-  <!-- Products (UPDATED with your photos, in the exact order you requested) -->
+  <!-- Products (UPDATED: all new products + your photos) -->
   <section class="products" id="products">
     <div class="container">
       <h2 class="section-title">Our Products</h2>
 
       <div class="products-grid">
-        <!-- MS Angle (Photo 1) -->
+
+        <!-- 1) M/S CHANNEL (2 photos) -->
         <div class="product-card">
-          <div class="product-image">
-            <img src="images/MS Angle.jpeg" alt="MS Angle Steel" loading="lazy" />
+          <div class="product-image multi">
+            <img src="images/MS_channel-1.jpeg" alt="M/S Channel - Photo 1" loading="lazy" />
+            <img src="images/MS_channel-2.jpeg" alt="M/S Channel - Photo 2" loading="lazy" />
           </div>
           <div class="product-info">
-            <h3>MS Angle</h3>
-            <p>Structural steel angles</p>
-            <p class="sizes">Sizes: 20X20X3MM TO 100X100X10MM</p>
+            <h3>M/S CHANNEL</h3>
+            <p>Structural mild steel channels</p>
+            <p class="sizes">Sizes: 75MM TO 300MM</p>
           </div>
         </div>
 
-        <!-- MS Beam (Photo 2) -->
+        <!-- 2) M/S I BEAM (1 photo) -->
         <div class="product-card">
           <div class="product-image">
-            <img src="images/MS Beam.jpeg" alt="MS Beam Steel" loading="lazy" />
+            <img src="images/MS_beam.jpeg" alt="M/S I Beam" loading="lazy" />
           </div>
           <div class="product-info">
-            <h3>MS Beam</h3>
-            <p>Heavy duty steel beams</p>
-            <p class="sizes">Sizes: 100x50MM TO 300X140MM</p>
+            <h3>M/S I BEAM</h3>
+            <p>Heavy duty structural I beams</p>
+            <p class="sizes">Sizes: 100MM TO 600MM</p>
           </div>
         </div>
 
-        <!-- MS Channel (Photo 3) -->
+        <!-- 3) M/S FLAT (2 photos) -->
         <div class="product-card">
-          <div class="product-image">
-            <img src="images/MS Channel.jpeg" alt="MS Channel Steel" loading="lazy" />
+          <div class="product-image multi">
+            <img src="images/MS_flat-1.jpeg" alt="M/S Flat - Photo 1" loading="lazy" />
+            <img src="images/MS_flat-2.jpeg" alt="M/S Flat - Photo 2" loading="lazy" />
           </div>
           <div class="product-info">
-            <h3>MS Channel</h3>
-            <p>Structural steel channels</p>
-            <p class="sizes">Sizes: 75X40MM TO 250X80MM</p>
-          </div>
-        </div>
-
-        <!-- MS Flat (Photo 4) -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="images/MS Flat.jpeg" alt="MS Flat Steel" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <h3>MS Flat</h3>
+            <h3>M/S FLAT</h3>
             <p>High quality mild steel flats</p>
-            <p class="sizes">Sizes: 18x4MM TO 200X50MM</p>
+            <p class="sizes">Sizes: 12X3 TO 200X25</p>
           </div>
         </div>
+
+        <!-- 4) M/S ANGLE (2 photos) -->
+        <div class="product-card">
+          <div class="product-image multi">
+            <img src="images/MS_angle-1.jpeg" alt="M/S Angle - Photo 1" loading="lazy" />
+            <img src="images/MS_angle-2.jpeg" alt="M/S Angle - Photo 2" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>M/S ANGLE</h3>
+            <p>Structural steel angles</p>
+            <p class="sizes">Sizes: 20X3 TO 100X10</p>
+          </div>
+        </div>
+
+        <!-- 5) H/R PLATE (2 photos) -->
+        <div class="product-card">
+          <div class="product-image multi">
+            <img src="images/HR_plate-1.jpeg" alt="H/R Plate - Photo 1" loading="lazy" />
+            <img src="images/HR_plate-2.jpeg" alt="H/R Plate - Photo 2" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>H/R PLATE</h3>
+            <p>Hot rolled plates for industrial use</p>
+            <p class="sizes">Sizes: 1.6MM TO 25MM THICKNESS</p>
+          </div>
+        </div>
+
+        <!-- 6) M/S ROUND / SQUARE (1 photo) -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/MS_round-square.jpeg" alt="M/S Round and Square Bars" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h3>M/S ROUND / SQUARE</h3>
+            <p>Round & square bars for fabrication</p>
+            <p class="sizes">Sizes: 6MM TO 50MM</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -725,19 +770,11 @@
     const header = document.getElementById('header');
 
     function onScroll() {
-      // Scroll-top button
-      if (window.scrollY > 420) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
+      if (window.scrollY > 420) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
 
-      // Header shadow
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      if (window.scrollY > 20) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
     }
 
     window.addEventListener('scroll', onScroll);
@@ -747,7 +784,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Optional: smooth scrolling for internal anchors
+    // Smooth scroll for internal anchors
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         const targetId = link.getAttribute('href');
